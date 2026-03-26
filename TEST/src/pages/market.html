@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Albion Online Market Analizi - Anlık fiyat takibi, trend analizi ve kar hesaplama">
+    <title>Market | Albion TR Tools</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/market.css">
+    <link rel="stylesheet" href="../styles/settings.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚔️</text></svg>">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo"><i class="fas fa-crown"></i><span>Albion TR</span></a>
+            <button class="nav-toggle" id="navToggle"><i class="fas fa-bars"></i></button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="../../index.html" class="nav-link" data-page="home"><i class="fas fa-home"></i> Ana Sayfa</a></li>
+                <li><a href="market.html" class="nav-link active" data-page="market"><i class="fas fa-chart-line"></i> Market</a></li>
+                <li><a href="crafting.html" class="nav-link" data-page="crafting"><i class="fas fa-hammer"></i> Crafting</a></li>
+                <li><a href="pvp.html" class="nav-link" data-page="pvp"><i class="fas fa-skull"></i> PvP</a></li>
+                <li><a href="guides.html" class="nav-link" data-page="guides"><i class="fas fa-book"></i> Rehberler</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1><i class="fas fa-chart-line"></i> Market Analizi</h1>
+                <p>Anlık fiyat takibi, trend analizi ve kar hesaplama araçları</p>
+            </header>
+
+            <div class="market-controls">
+                <div class="server-select">
+                    <label><i class="fas fa-server"></i> Sunucu:</label>
+                    <select id="serverSelect">
+                        <option value="europe">Europe</option>
+                        <option value="west">North America</option>
+                        <option value="east">Asia</option>
+                    </select>
+                </div>
+                <div class="location-select">
+                    <label><i class="fas fa-map-marker-alt"></i> Pazar:</label>
+                    <select id="locationSelect">
+                        <option value="Thetford">Thetford</option>
+                        <option value="Lymhurst">Lymhurst</option>
+                        <option value="Bridgewatch">Bridgewatch</option>
+                        <option value="Martlock">Martlock</option>
+                        <option value="Fort Sterling">Fort Sterling</option>
+                        <option value="Caerleon">Caerleon</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="search-section">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="itemSearch" placeholder="Eşya ara... (örn: T4_MELEE, Hide)">
+                    <button id="searchBtn" class="btn-icon"><i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="quick-filters">
+                    <button class="filter-btn active" data-tier="all">Tümü</button>
+                    <button class="filter-btn" data-tier="t4">T4</button>
+                    <button class="filter-btn" data-tier="t5">T5</button>
+                    <button class="filter-btn" data-tier="t6">T6</button>
+                    <button class="filter-btn" data-tier="t7">T7</button>
+                    <button class="filter-btn" data-tier="t8">T8</button>
+                </div>
+            </div>
+
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all"><i class="fas fa-th"></i> Tümü</button>
+                <button class="tab-btn" data-category="weapons"><i class="fas fa-sword"></i> Silahlar</button>
+                <button class="tab-btn" data-category="armor"><i class="fas fa-shield-alt"></i> Zırhlar</button>
+                <button class="tab-btn" data-category="consumables"><i class="fas fa-flask"></i> Tüketim</button>
+                <button class="tab-btn" data-category="materials"><i class="fas fa-gem"></i> Malzemeler</button>
+            </div>
+
+            <section class="chart-section">
+                <div class="chart-header">
+                    <h2><i class="fas fa-chart-area"></i> Fiyat Grafiği</h2>
+                    <div class="time-filters">
+                        <button class="time-btn active" data-time="7">7G</button>
+                        <button class="time-btn" data-time="14">14G</button>
+                        <button class="time-btn" data-time="30">30G</button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <canvas id="priceChart"></canvas>
+                </div>
+            </section>
+
+            <section class="items-section">
+                <h2><i class="fas fa-boxes"></i> Popüler Eşyalar</h2>
+                <div class="items-grid" id="itemsGrid">
+                    <div class="loading-spinner"><i class="fas fa-spinner fa-spin"></i><span>Yükleniyor...</span></div>
+                </div>
+            </section>
+
+            <section class="calculator-section">
+                <h2><i class="fas fa-calculator"></i> Kar Hesaplayıcı</h2>
+                <div class="calculator-grid">
+                    <div class="calc-input">
+                        <label>Alış Fiyatı</label>
+                        <input type="number" id="buyPrice" placeholder="0">
+                        <span class="input-suffix">Silver</span>
+                    </div>
+                    <div class="calc-input">
+                        <label>Satış Fiyatı</label>
+                        <input type="number" id="sellPrice" placeholder="0">
+                        <span class="input-suffix">Silver</span>
+                    </div>
+                    <div class="calc-result">
+                        <div class="result-item profit">
+                            <span class="result-label">Kar</span>
+                            <span class="result-value" id="profitValue">0</span>
+                        </div>
+                        <div class="result-item percentage">
+                            <span class="result-label">Kar Oranı</span>
+                            <span class="result-value" id="profitPercent">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container"><div class="footer-bottom"><p>&copy; 2026 Albion TR Tools</p></div></div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../lib/settings.js"></script>
+    <script src="../lib/nav.js"></script>
+    <script src="../lib/market.js"></script>
+    <script src="../data/items-data.js"></script>
+</body>
+</html>

@@ -1,0 +1,244 @@
+/* Guides Page Styles */
+
+.guides-filters {
+    margin-bottom: 30px;
+}
+
+.weapon-filters {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.guide-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.guide-btn:hover, .guide-btn.active {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+}
+
+.ai-chat-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    margin-bottom: 40px;
+}
+
+.ai-chat-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.ai-chat-header h2 {
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ai-chat-header h2 i { color: var(--accent); }
+
+.ai-chat-box {
+    background: var(--bg-dark);
+    border-radius: var(--radius);
+    padding: 20px;
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: 15px;
+}
+
+.ai-message {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.ai-message i {
+    width: 40px;
+    height: 40px;
+    background: var(--accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.ai-message p {
+    flex: 1;
+    padding: 15px;
+    background: var(--bg-card);
+    border-radius: var(--radius);
+    line-height: 1.6;
+}
+
+.user-message {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-direction: row-reverse;
+}
+
+.user-message .message-content {
+    background: var(--primary);
+    color: #000;
+    padding: 15px;
+    border-radius: var(--radius);
+    max-width: 80%;
+}
+
+.ai-input-box {
+    display: flex;
+    gap: 10px;
+}
+
+.ai-input-box input {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 12px 20px;
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.ai-input-box input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.guides-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.guide-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.guide-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+    box-shadow: var(--shadow);
+}
+
+.guide-image {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.guide-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.guide-badge.meta { background: var(--primary); color: #000; }
+.guide-badge.pve { background: var(--success); color: #fff; }
+.guide-badge.pvp { background: var(--danger); color: #fff; }
+.guide-badge.gathering { background: #8B4513; color: #fff; }
+
+.guide-content {
+    padding: 25px;
+}
+
+.guide-weapon {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.guide-weapon i {
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.guide-title {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.guide-desc {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.guide-meta {
+    display: flex;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+}
+
+.guide-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.guide-meta i {
+    color: var(--primary);
+}
+
+.guide-stats {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    margin-top: 15px;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-item .value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.stat-item .label {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+    .guides-grid {
+        grid-template-columns: 1fr;
+    }
+}

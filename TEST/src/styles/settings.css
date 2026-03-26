@@ -1,0 +1,208 @@
+/* Settings & Theme Styles */
+
+body {
+    --theme-primary: #D4AF37;
+    --theme-secondary: #B87333;
+    --theme-bg: #0d1117;
+    --theme-card: #161b22;
+}
+
+/* Theme Variations */
+body.theme-gold {
+    --primary: #D4AF37;
+    --secondary: #B87333;
+}
+
+body.theme-blue {
+    --primary: #4169E1;
+    --secondary: #1E90FF;
+}
+
+body.theme-red {
+    --primary: #DC3545;
+    --secondary: #FF6B6B;
+}
+
+body.theme-green {
+    --primary: #28A745;
+    --secondary: #20C997;
+}
+
+body.theme-purple {
+    --primary: #6F42C1;
+    --secondary: #9B59B6;
+}
+
+body.theme-orange {
+    --primary: #FD7E14;
+    --secondary: #FFA500;
+}
+
+body.theme-teal {
+    --primary: #20C997;
+    --secondary: #17A2B8;
+}
+
+body.theme-pink {
+    --primary: #E83E8C;
+    --secondary: #F783AC;
+}
+
+/* Settings Panel */
+.settings-panel {
+    position: fixed;
+    top: 70px;
+    right: -320px;
+    width: 300px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 25px;
+    z-index: 1001;
+    transition: var(--transition);
+    box-shadow: var(--shadow);
+}
+
+.settings-panel.active {
+    right: 20px;
+}
+
+.settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+.settings-header h3 {
+    font-size: 1.2rem;
+    color: var(--primary);
+}
+
+.settings-close {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.settings-section {
+    margin-bottom: 25px;
+}
+
+.settings-section h4 {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Theme Colors */
+.theme-colors {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.theme-color {
+    width: 40px;
+    height: 40px;
+    border-radius: var(--radius);
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.theme-color:hover, .theme-color.active {
+    border-color: #fff;
+    transform: scale(1.1);
+}
+
+.theme-color.gold { background: linear-gradient(135deg, #D4AF37, #B87333); }
+.theme-color.blue { background: linear-gradient(135deg, #4169E1, #1E90FF); }
+.theme-color.red { background: linear-gradient(135deg, #DC3545, #FF6B6B); }
+.theme-color.green { background: linear-gradient(135deg, #28A745, #20C997); }
+.theme-color.purple { background: linear-gradient(135deg, #6F42C1, #9B59B6); }
+.theme-color.orange { background: linear-gradient(135deg, #FD7E14, #FFA500); }
+.theme-color.teal { background: linear-gradient(135deg, #20C997, #17A2B8); }
+.theme-color.pink { background: linear-gradient(135deg, #E83E8C, #F783AC); }
+
+/* Language Selector */
+.lang-selector {
+    display: flex;
+    gap: 10px;
+}
+
+.lang-btn {
+    flex: 1;
+    padding: 10px;
+    background: var(--bg-hover);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.lang-btn:hover, .lang-btn.active {
+    background: var(--primary);
+    color: #000;
+    border-color: var(--primary);
+}
+
+/* Notifications */
+.notification {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1002;
+    animation: slideIn 0.3s ease;
+}
+
+.notification.success { border-left: 4px solid var(--success); }
+.notification.error { border-left: 4px solid var(--danger); }
+.notification.warning { border-left: 4px solid var(--warning); }
+
+@keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Tooltips */
+.tooltip {
+    position: relative;
+}
+
+.tooltip::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+}
+
+.tooltip:hover::after {
+    opacity: 1;
+    visibility: visible;
+    bottom: calc(100% + 10px);
+}

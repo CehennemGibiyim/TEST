@@ -1,0 +1,24 @@
+{
+  "name": "albion-tools",
+  "version": "1.0.0",
+  "description": "Albion Online Tools - Türkiye için kapsamlı oyuncu rehberi",
+  "main": "index.html",
+  "scripts": {
+    "deploy": "npx gh-pages -d .",
+    "lint": "echo 'No linting configured'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CehennemGibiyim/TEST"
+  },
+  "keywords": [
+    "albion-online",
+    "game-tools",
+    "turkish"
+  ],
+  "author": "CehennemGibiyim",
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
+}
