@@ -1,0 +1,135 @@
+{
+    "kills": [
+        {
+            "id": "1",
+            "killer": {
+                "name": "ShadowBlade",
+                "guild": "DarkOrder",
+                "alliance": "ShadowAlliance",
+                "avatar": "",
+                "equipment": {},
+                "fame": 12500
+            },
+            "victim": {
+                "name": "NoobMaster",
+                "guild": "NewbieSquad",
+                "alliance": null,
+                "avatar": "",
+                "equipment": {},
+                "fame": 3500
+            },
+            "date": "2026-03-27T02:00:00.000Z",
+            "location": {
+                "zone": "Thetford",
+                "region": "Royal Continent"
+            },
+            "totalFame": 16000,
+            "groupSize": 1
+        },
+        {
+            "id": "2",
+            "killer": {
+                "name": "BloodMoon",
+                "guild": "Warriors",
+                "alliance": "EpicGuilds",
+                "avatar": "",
+                "equipment": {},
+                "fame": 8900
+            },
+            "victim": {
+                "name": "CasualPlayer",
+                "guild": null,
+                "alliance": null,
+                "avatar": "",
+                "equipment": {},
+                "fame": 2100
+            },
+            "date": "2026-03-27T01:55:00.000Z",
+            "location": {
+                "zone": "Bridgewatch",
+                "region": "Steppe"
+            },
+            "totalFame": 11000,
+            "groupSize": 1
+        },
+        {
+            "id": "3",
+            "killer": {
+                "name": "DragonSlayer",
+                "guild": "Legendary",
+                "alliance": "TopGuilds",
+                "avatar": "",
+                "equipment": {},
+                "fame": 45000
+            },
+            "victim": {
+                "name": "PvpNewbie",
+                "guild": "TestGuild",
+                "alliance": null,
+                "avatar": "",
+                "equipment": {},
+                "fame": 890
+            },
+            "date": "2026-03-27T01:50:00.000Z",
+            "location": {
+                "zone": "Caerleon",
+                "region": "Royalmarch"
+            },
+            "totalFame": 45890,
+            "groupSize": 1
+        },
+        {
+            "id": "4",
+            "killer": {
+                "name": "IronFist",
+                "guild": "TankSquad",
+                "alliance": null,
+                "avatar": "",
+                "equipment": {},
+                "fame": 15000
+            },
+            "victim": {
+                "name": "GlassCannon",
+                "guild": "MageTower",
+                "alliance": "MagicGuild",
+                "avatar": "",
+                "equipment": {},
+                "fame": 4200
+            },
+            "date": "2026-03-27T01:45:00.000Z",
+            "location": {
+                "zone": "Martlock",
+                "region": "Highlands"
+            },
+            "totalFame": 19200,
+            "groupSize": 2
+        },
+        {
+            "id": "5",
+            "killer": {
+                "name": "StealthArcher",
+                "guild": "Hunters",
+                "alliance": "ForestAlliance",
+                "avatar": "",
+                "equipment": {},
+                "fame": 22000
+            },
+            "victim": {
+                "name": "HeavyTank",
+                "guild": "Defenders",
+                "alliance": "SafeZone",
+                "avatar": "",
+                "equipment": {},
+                "fame": 18500
+            },
+            "date": "2026-03-27T01:40:00.000Z",
+            "location": {
+                "zone": "Lymhurst",
+                "region": "Forest"
+            },
+            "totalFame": 40500,
+            "groupSize": 1
+        }
+    ],
+    "lastUpdate": "2026-03-27T02:05:00.000Z"
+}
