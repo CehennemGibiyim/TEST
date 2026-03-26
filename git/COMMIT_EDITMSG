@@ -1,9 +1,0 @@
-Initial commit - Albion TR Tools v1.0
-
-- Ana sayfa ve 6 sayfa (Market, Crafting, PvP, Rehberler, Haritalar, Araçlar)
-- GitHub Actions workflows (deploy, AI bot, PvP fetcher)
-- Market API entegrasyonu (AODP)
-- AI Asistan (Gemini API)
-- 8 tema desteği
-- Çoklu dil desteği (TR/EN)
-- Responsive tasarım
